@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Guiguzi: 量權揣情</title>
+    
+    <style type="text/css">
+        /* --- Tailwind CSS Pre-compilado (Preflight & Utilitarios Usados) --- */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::before,::after{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type='search']{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button, [role="button"]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}
+        .mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-10{margin-bottom:2.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}
+        .block{display:block}.h-screen{height:100vh}.w-80{width:20rem}
+        .overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}
+        .border-b-2{border-bottom-width:2px}.border-stone-300{--tw-border-opacity:1;border-color:rgb(214 211 209 / var(--tw-border-opacity))}
+        .bg-stone-100{--tw-bg-opacity:1;background-color:rgb(245 245 244 / var(--tw-bg-opacity))}
+        .bg-stone-200{--tw-bg-opacity:1;background-color:rgb(231 229 228 / var(--tw-bg-opacity))}
+        .bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}
+        .p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.pb-5{padding-bottom:1.25rem}
+        .text-center{text-align:center}.text-justify{text-align:justify}
+        .text-2xl{font-size:1.5rem;line-height:2rem}.text-5xl{font-size:3rem;line-height:1}
+        .text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
+        .font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-wider{letter-spacing:0.05em}
+        .text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}
+        .text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}
+        .text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}
+        .text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity))}
+        .shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+        .shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+        .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;-webkit-backdrop-filter:backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+        .space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}
+        .space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}
+        @media (min-width:1024px){.lg\:p-12{padding:3rem}}
+
+        /* --- Estilos Personalizados --- */
+        body{background-color:#f3f0e9;font-family:'Helvetica Neue',Arial,sans-serif;color:#4a4a4a}
+        .textum-classicum{font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif; font-size: 1.3rem; line-height: 2.2rem;}
+        .verbum{cursor:pointer;transition:background-color .2s ease-in-out, box-shadow .2s ease-in-out; border-radius: 0.25rem; padding: 0 0.1rem;}
+        .verbum:hover{background-color:#ede6d6}
+        .activus{background-color:#cbbca7!important;font-weight:700}
+        
+        /* --- ESTILOS PARA EL SELECTOR DE IDIOMA --- */
+        #language-switcher { display: flex; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; }
+        .lang-btn { flex-grow: 1; padding: 0.5rem; border: 1px solid #d6d3d1; background-color: #f5f5f4; color: #57534e; border-radius: 0.375rem; cursor: pointer; font-weight: 600; transition: background-color 0.2s, color 0.2s; font-size: 0.875rem;}
+        .lang-btn:hover { background-color: #e7e5e4; }
+        .lang-btn.active-lang { background-color: #4a4a4a; color: #ffffff; border-color: #4a4a4a; }
+        
+        /* --- LAYOUT RESPONSIVO (Móvil Primero) --- */
+        .main-layout { padding: 1rem; padding-bottom: calc(45vh + 2rem); }
+        #marginalia-sinistra { position: fixed; bottom: 0; left: 0; right: 0; width: 100%; height: 45vh; z-index: 50; border-top: 2px solid #d6d3d1; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); transform: translateY(0); transition: transform 0.3s ease-in-out; }
+        
+        /* --- LAYOUT PARA ORDENADOR --- */
+        @media (min-width: 1024px) {
+            .main-layout {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            #marginalia-sinistra {
+                position: sticky;
+                top: 2rem;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                height: calc(100vh - 4rem);
+                width: auto;
+                border-top: none;
+                box-shadow: var(--tw-shadow-xl);
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-100">
+
+    <div class="main-layout">
+        <main>
+            <header class="text-center mb-10 border-b-2 border-stone-300 pb-5">
+                <h1 id="main-title" class="text-5xl textum-classicum text-gray-800"></h1>
+                <h2 id="subtitle" class="text-2xl text-gray-600 mt-2"></h2>
+            </header>
+            
+            <div id="paragrafus-contentus" class="textum-classicum leading-relaxed text-justify bg-white p-8 lg:p-12 rounded-lg shadow-lg"></div>
+            
+            <footer class="text-center mt-6 text-sm text-gray-500">
+                <p id="footer-text"><i>Haz clic en una palabra para ver su análisis y la traducción de la frase.</i></p>
+            </footer>
+        </main>
+
+        <aside id="marginalia-sinistra" class="bg-white p-6 rounded-t-lg lg:rounded-lg overflow-y-auto">
+            <div id="language-switcher" class="mb-4">
+                <button data-lang="en" class="lang-btn">English</button>
+                <button data-lang="es" class="lang-btn active-lang">Español</button>
+                <button data-lang="zh" class="lang-btn">中文 (繁體)</button>
+            </div>
+            <div id="marginalia-contentus"></div>
+        </aside>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const titulus_originalis = "量權揣情"; // Título del capítulo
+        const titulus_translationes = {
+            en: "Weighing Power & Figuring out Sentiments (Guiguzi)",
+            es: "Sopesar el Poder y Sondear los Sentimientos (Guiguzi)",
+            zh: "量權揣情 (鬼谷子)"
+        };
+
+        const paragrafus = {
+            id: 1,
+            orationes: []
+        };
+        
+        const mainTitle = document.getElementById('main-title');
+        const paragrafusContentus = document.getElementById('paragrafus-contentus');
+        const marginaliaContentus = document.getElementById('marginalia-contentus');
+        const languageSwitcher = document.getElementById('language-switcher');
+        const subtitle = document.getElementById('subtitle');
+        const footerText = document.getElementById('footer-text');
+
+        let idiomaActivo = 'es';
+        let activumVerbum = null;
+        let activaOratio = null;
+
+        const langConfig = {
+            en: { analysisTitle: 'Syntactic Analysis', translationTitle: 'Sentence Translation & Analysis', selectWordText: 'Select a word to see its analysis.', meaningLabel: 'Meaning', footerTextContent: '<i>Click a word to see its analysis and the sentence translation.</i>', analysisKey: 'analysis_morphologicus_en', significationKey: 'en', translationKey: 'en' },
+            es: { analysisTitle: 'Análisis Sintáctico', translationTitle: 'Traducción y Análisis de la Frase', selectWordText: 'Seleccione una palabra para ver su análisis.', meaningLabel: 'Significado', footerTextContent: '<i>Haz clic en una palabra para ver su análisis y la traducción de la frase.</i>', analysisKey: 'analysis_morphologicus', significationKey: 'es', translationKey: 'es' },
+            zh: { analysisTitle: '語法分析', translationTitle: '句子翻譯與分析', selectWordText: '請選取一個單字以查看其分析。', meaningLabel: '意義', footerTextContent: '<i>點擊一個單字以查看其分析及句子翻譯。</i>', analysisKey: 'analysis_morphologicus_zh', significationKey: 'zh', translationKey: 'zh' }
+        };
+
+        function initialRender() {
+            mainTitle.textContent = titulus_originalis;
+            idiomaActivo = document.querySelector('.lang-btn.active-lang').dataset.lang || 'es';
+            subtitle.textContent = titulus_translationes[idiomaActivo];
+            populateAllData_FULL();
+            reddeParagrafum();
+            actualizaMarginalia();
+        }
+
+        function reddeParagrafum() {
+            let html = '';
+            paragrafus.orationes.forEach(oratio => {
+                let oratioHtml = oratio.textus_originalis;
+                oratio.verba.forEach(verbum => {
+                    const cleanTerminus = verbum.terminus.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    const regex = new RegExp(`(${cleanTerminus})(?![^<]*?>|[^<>]*?<\\/)`, 'g');
+                    oratioHtml = oratioHtml.replace(regex, `<span class="verbum" data-verbum-id="${verbum.id_verbi}" data-oratio-id="${oratio.id_orationis}">$1</span>`);
+                });
+                html += oratioHtml + ' ';
+            });
+            paragrafusContentus.innerHTML = `<p>${html}</p>`;
+        }
+        
+        function actualizaMarginalia() {
+            let htmlContentus = '';
+            const config = langConfig[idiomaActivo];
+
+            subtitle.textContent = titulus_translationes[idiomaActivo];
+            footerText.innerHTML = config.footerTextContent;
+
+            htmlContentus += `<section id="analysis-morphologicus-section" class="mb-6"><h3 class="text-xl font-semibold text-gray-800 mb-4">${config.analysisTitle}</h3>`;
+            
+            if (activumVerbum) {
+                const analysisText = activumVerbum[config.analysisKey] || activumVerbum.analysis_morphologicus;
+                const meaningText = activumVerbum.significationes[config.significationKey];
+                
+                htmlContentus += `
+                    <h4 class="text-2xl textum-classicum text-gray-800 mb-4">${activumVerbum.terminus}</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-gray-700 mt-1">${analysisText}</p>
+                            <p class="text-gray-700 mt-1"><strong>${config.meaningLabel}:</strong> ${meaningText}</p>
+                        </div>
+                    </div>`;
+            } else {
+                htmlContentus += `<div class="p-4 bg-stone-200 rounded-md text-gray-600"><p>${config.selectWordText}</p></div>`;
+            }
+            htmlContentus += `</section>`;
+
+            if (activaOratio) {
+                const translationText = activaOratio.translationes[config.translationKey];
+                
+                htmlContentus += `
+                    <hr class="border-stone-300 my-6">
+                    <section id="analysis-orationis-section">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">${config.translationTitle}</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-800 textum-classicum bg-stone-200 p-3 rounded-md">${activaOratio.textus_originalis}</p>
+                            <div class="text-gray-700 mt-2">${translationText}</div>
+                        </div>
+                    </section>`;
+            }
+            
+            marginaliaContentus.innerHTML = htmlContentus;
+        }
+
+        paragrafusContentus.addEventListener('click', (e) => {
+            const verbumTarget = e.target.closest('.verbum');
+            if (!verbumTarget) {
+                if (!e.target.closest('#marginalia-sinistra')) {
+                    document.querySelectorAll('.activus').forEach(el => el.classList.remove('activus'));
+                    activumVerbum = null;
+                    activaOratio = null;
+                    actualizaMarginalia();
+                }
+                return;
+            }
+
+            const isAlreadyActive = verbumTarget.classList.contains('activus');
+            document.querySelectorAll('.activus').forEach(el => el.classList.remove('activus'));
+            if (isAlreadyActive) {
+                activumVerbum = null;
+                activaOratio = null;
+                actualizaMarginalia();
+                return;
+            }
+
+            const verbumId = verbumTarget.dataset.verbumId;
+            const oratioId = verbumTarget.dataset.oratioId;
+            activaOratio = paragrafus.orationes.find(o => o.id_orationis === oratioId);
+            if (activaOratio) {
+                activumVerbum = activaOratio.verba.find(v => v.id_verbi === verbumId);
+            }
+            verbumTarget.classList.add('activus');
+            actualizaMarginalia();
+        });
+
+        languageSwitcher.addEventListener('click', (e) => {
+            const targetBtn = e.target.closest('.lang-btn');
+            if (!targetBtn) return;
+            
+            const newLang = targetBtn.dataset.lang;
+            if (newLang === idiomaActivo) return;
+            
+            idiomaActivo = newLang;
+            
+            languageSwitcher.querySelector('.active-lang').classList.remove('active-lang');
+            targetBtn.classList.add('active-lang');
+            
+            actualizaMarginalia();
+        });
+
+        function populateAllData_FULL() {
+            paragrafus.orationes = [
+                {
+                    id_orationis: 'o1',
+                    textus_originalis: "古之善用天下者，必量天下之權而揣諸侯之情。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Those in ancient times who were skilled at managing the world would invariably weigh the power of the world and figure out the sentiments of the feudal lords.<br><br><strong>Analysis:</strong> This sentence establishes the two core pillars of ancient strategy according to Guiguzi: '量權' (weighing power), which is the objective analysis of strength and resources, and '揣情' (figuring out sentiments), the subjective analysis of emotions, intentions, and psychology.",
+                        es: "<strong>Traducción:</strong> Aquellos en la antigüedad que eran hábiles en el manejo del mundo invariablemente sopesaban el poder del mundo y sondeaban los sentimientos de los señores feudales.<br><br><strong>Análisis:</strong> Esta oración establece los dos pilares centrales de la estrategia antigua según Guiguzi: '量權' (sopesar el poder), que es el análisis objetivo de la fuerza y los recursos, y '揣情' (sondear los sentimientos), el análisis subjetivo de las emociones, intenciones y psicología.",
+                        zh: "<strong>翻譯:</strong> 古代善於運籌天下的人，必定會衡量天下各方的權力，並揣摩諸侯們的真實情感與意圖。<br><br><strong>分析:</strong> 這句話確立了《鬼谷子》古代戰略的兩大核心支柱：「量權」，即對實力和資源的客觀分析；以及「揣情」，即對情感、意圖和心理的主觀分析。<br><br><strong>白話解釋:</strong> 在古代，那些善於管理和影響天下局勢的智者，一定會先從兩方面下手。第一，他們會客觀地評估天下各方的實力對比，這就是「量權」。第二，他們會深入地揣摩各個諸侯國君主的內心想法、真實意圖和情緒狀態，這就是「揣情」。"
+                    },
+                    verba: [
+                        { id_verbi: 'v1_1', terminus: '善用天下者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que es bueno manejando el mundo', en: 'he who is good at managing the world', zh: '善於運籌天下的人' } },
+                        { id_verbi: 'v1_2', terminus: '必量天下之權', analysis_morphologicus: 'Predicado 1', analysis_morphologicus_en: 'Predicate 1', analysis_morphologicus_zh: '謂語1', significationes: { es: 'debe medir el poder del mundo', en: 'must weigh the power of the world', zh: '必定會衡量天下的權力' } },
+                        { id_verbi: 'v1_3', terminus: '而揣諸侯之情', analysis_morphologicus: 'Predicado 2', analysis_morphologicus_en: 'Predicate 2', analysis_morphologicus_zh: '謂語2', significationes: { es: 'y sondear los sentimientos de los señores', en: 'and figure out the sentiments of the lords', zh: '並揣摩諸侯的情感' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o2',
+                    textus_originalis: "量權不審，不知強弱輕重之稱；揣情不審，不知隱匿變化之動靜。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> If weighing power is not done precisely, one cannot know the balance of strength and weakness, lightness and heaviness. If figuring out sentiments is not done precisely, one cannot know the movements of concealment and change.<br><br><strong>Analysis:</strong> This sentence explains the negative consequences of failing at either of the two core skills. Imprecise '量權' leads to a flawed assessment of the physical world (strategy fails). Imprecise '揣情' leads to a flawed understanding of human intentions (diplomacy and persuasion fail).",
+                        es: "<strong>Traducción:</strong> Si sopesar el poder no se hace con precisión, no se puede conocer el equilibrio de fuerza y debilidad, de levedad y pesadez. Si sondear los sentimientos no se hace con precisión, no se pueden conocer los movimientos del ocultamiento y el cambio.<br><br><strong>Análisis:</strong> Esta oración explica las consecuencias negativas de fallar en cualquiera de las dos habilidades principales. Un '量權' impreciso conduce a una evaluación errónea del mundo físico (la estrategia falla). Un '揣情' impreciso conduce a una comprensión errónea de las intenciones humanas (la diplomacia y la persuasión fallan).",
+                        zh: "<strong>翻譯:</strong> 衡量權力不夠審慎，就無法了解強弱輕重的對比；揣摩情感不夠審慎，就無法察覺對方隱藏和變化的動靜。<br><br><strong>分析:</strong> 這句話闡述了未能掌握這兩項核心技能的負面後果。不精確的「量權」會導致對客觀世界評估的失誤（戰略失敗）。不精確的「揣情」則會導致對人心的誤判（外交與遊說失敗）。<br><br><strong>白話解釋:</strong> 如果對各方實力的評估不夠仔細周全，就沒辦法準確地判斷出誰強誰弱、誰在局勢中影響力大、誰影響力小。同樣地，如果對他人內心想法的揣摩不夠深入，就無法察覺到對方那些隱藏起來的、或者正在發生變化的細微舉動和真實意圖。"
+                    },
+                    verba: [
+                        { id_verbi: 'v2_1', terminus: '量權不審', analysis_morphologicus: 'Sujeto + Negación + Predicado', analysis_morphologicus_en: 'Subject + Negation + Predicate', analysis_morphologicus_zh: '主語 + 否定 + 謂語', significationes: { es: 'el sopesar el poder no es preciso', en: 'weighing power is not precise', zh: '衡量權力不審慎' } },
+                        { id_verbi: 'v2_2', terminus: '不知強弱輕重之稱', analysis_morphologicus: 'Cláusula de resultado', analysis_morphologicus_en: 'Result clause', analysis_morphologicus_zh: '結果分句', significationes: { es: 'no se conoce el balance de fuerza y debilidad', en: 'one does not know the balance of strength and weakness', zh: '不了解強弱輕重的對比' } },
+                        { id_verbi: 'v2_3', terminus: '揣情不審', analysis_morphologicus: 'Sujeto + Negación + Predicado', analysis_morphologicus_en: 'Subject + Negation + Predicate', analysis_morphologicus_zh: '主語 + 否定 + 謂語', significationes: { es: 'el sondear los sentimientos no es preciso', en: 'figuring out sentiments is not precise', zh: '揣摩情感不審慎' } },
+                        { id_verbi: 'v2_4', terminus: '不知隱匿變化之動靜', analysis_morphologicus: 'Cláusula de resultado', analysis_morphologicus_en: 'Result clause', analysis_morphologicus_zh: '結果分句', significationes: { es: 'no se conocen los movimientos de lo oculto y el cambio', en: 'one does not know the movements of concealment and change', zh: '不察覺隱藏變化的動靜' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o3',
+                    textus_originalis: "何謂量權？",
+                    translationes: {
+                        en: "<strong>Translation:</strong> What is meant by 'weighing power'?<br><br><strong>Analysis:</strong> A rhetorical question that serves as a heading to introduce a detailed explanation of the first concept, '量權'.",
+                        es: "<strong>Traducción:</strong> ¿Qué se entiende por 'sopesar el poder'?<br><br><strong>Análisis:</strong> Una pregunta retórica que sirve de encabezado para introducir una explicación detallada del primer concepto, '量權'.",
+                        zh: "<strong>翻譯:</strong> 什麼叫做「量權」呢？<br><br><strong>分析:</strong> 這是一個設問句，作為標題，用以引出對第一個核心概念「量權」的詳細解釋。<br><br><strong>白話解釋:</strong> 那麼，具體來說，什麼才算是「量權」（評估實力）呢？"
+                    },
+                    verba: [
+                        { id_verbi: 'v3_1', terminus: '何謂量權', analysis_morphologicus: 'Pregunta', analysis_morphologicus_en: 'Question', analysis_morphologicus_zh: '問句', significationes: { es: '¿qué es sopesar el poder?', en: 'what is meant by weighing power?', zh: '什麼叫做量權' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o4',
+                    textus_originalis: "曰：度于大小，謀於眾寡，稱貨財有無之數，料人民多少、饒乏有餘不足幾何；辨地形之險易，孰利孰害；謀慮孰長孰短；揆君臣之親疏，孰賢孰不肖；與賓客之智慧，孰少孰多；觀天時之禍福，孰吉孰凶；諸侯之交，孰用孰不用；百姓之心，去就變化，孰安孰危，孰好孰憎，反側孰辯。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> It means: measuring size, planning based on numbers, weighing the amount of goods and wealth, estimating the population size and its surplus or deficit; discerning the strategic advantages of terrain, which is beneficial and which is harmful; assessing plans for their strengths and weaknesses; gauging the relationship between ruler and ministers, who is worthy and who is not; evaluating the wisdom of advisors, who has more and who has less; observing the portents of fortune and misfortune, which are auspicious and which are ominous; analyzing alliances, which are useful and which are not; and understanding the hearts of the people, their shifts in allegiance, who is content and who is restless, who they love and who they hate, and who is wavering or rebellious.<br><br><strong>Analysis:</strong> This is a comprehensive checklist for strategic analysis. It covers quantitative factors (territory, population, wealth), geography, quality of leadership and counsel, astrological or opportune timing, diplomatic relations, and finally, public sentiment. It is a holistic approach to understanding a state's true power.",
+                        es: "<strong>Traducción:</strong> Significa: medir el tamaño, planificar en función de la cantidad, sopesar la cantidad de bienes y riquezas, estimar el tamaño de la población y su superávit o déficit; discernir las ventajas estratégicas del terreno, cuál es beneficioso y cuál perjudicial; evaluar los planes por sus fortalezas y debilidades; calibrar la relación entre gobernante y ministros, quién es digno y quién no; evaluar la sabiduría de los consejeros, quién tiene más y quién menos; observar los presagios de fortuna y desgracia, cuáles son auspiciosos y cuáles funestos; analizar alianzas, cuáles son útiles y cuáles no; y comprender los corazones del pueblo, sus cambios de lealtad, quién está contento y quién inquieto, a quién aman y a quién odian, y quién duda o se rebela.<br><br><strong>Análisis:</strong> Esta es una lista de verificación exhaustiva para el análisis estratégico. Cubre factores cuantitativos (territorio, población, riqueza), geografía, calidad del liderazgo y de los consejeros, el momento oportuno o astrológico, las relaciones diplomáticas y, finalmente, el sentimiento público. Es un enfoque holístico para comprender el verdadero poder de un estado.",
+                        zh: "<strong>翻譯:</strong> 意思是說：要衡量國土的大小，謀劃兵力的多寡，計算物資財富的有無；估計人口的多少、富饒或貧乏、有餘或不足的程度；分辨地形的險峻或平坦，哪個有利哪個有害；評估計謀的優劣長短；考察君臣關係的親密或疏遠，誰賢能誰無能；比較賓客謀士的智慧高低；觀察天時的吉凶禍福；分析諸侯間的外交關係，哪些可以利用哪些不能；以及洞察百姓的民心向背、變化，誰安穩誰危險，擁護誰憎恨誰，誰有叛亂的傾向。<br><br><strong>分析:</strong> 這是一份極其全面的戰略分析清單。它涵蓋了量化因素（領土、人口、財富）、地理、領導層與謀士的素質、天時與機遇、外交關係，以及最終的民心向背。這是一種旨在全面了解一個國家真正實力的整體性方法。<br><br><strong>白話解釋:</strong> 所謂「量權」，就是要評估以下九個方面：一、國土大小和人口數量。二、財富物資是多是少。三、地理形勢是險要還是平坦，對誰有利。四、計謀策略是高明還是拙劣。五、君臣關係是親密還是疏遠，臣子是賢能還是平庸。六、謀士賓客的智慧是高是低。七、天時氣候是吉利還是不祥。八、外交盟友中，誰可靠誰不可靠。九、百姓的人心，是安定還是思變，是擁護還是憎恨，有沒有潛在的叛亂傾向。"
+                    },
+                    verba: [
+                        { id_verbi: 'v4_1', terminus: '度于大小', analysis_morphologicus: 'Verbo + Preposición + Objeto', analysis_morphologicus_en: 'Verb + Preposition + Object', analysis_morphologicus_zh: '動詞 + 介詞 + 賓語', significationes: { es: 'medir en tamaño', en: 'measure in size', zh: '衡量大小' } },
+                        { id_verbi: 'v4_2', terminus: '謀於眾寡', analysis_morphologicus: 'Verbo + Preposición + Objeto', analysis_morphologicus_en: 'Verb + Preposition + Object', analysis_morphologicus_zh: '動詞 + 介詞 + 賓語', significationes: { es: 'planificar en multitud/escasez', en: 'plan in multitude/scarcity', zh: '謀劃兵力多寡' } },
+                        { id_verbi: 'v4_3', terminus: '稱貨財有無之數', analysis_morphologicus: 'Verbo + Objeto', analysis_morphologicus_en: 'Verb + Object', analysis_morphologicus_zh: '動賓結構', significationes: { es: 'pesar la cantidad de bienes y riqueza', en: 'weigh the amount of goods and wealth', zh: '計算物資財富的有無' } },
+                        { id_verbi: 'v4_4', terminus: '辨地形之險易', analysis_morphologicus: 'Verbo + Objeto', analysis_morphologicus_en: 'Verb + Object', analysis_morphologicus_zh: '動賓結構', significationes: { es: 'discernir la dificultad del terreno', en: 'discern the difficulty of the terrain', zh: '分辨地形的險峻平坦' } },
+                        { id_verbi: 'v4_5', terminus: '揆君臣之親疏', analysis_morphologicus: 'Verbo + Objeto', analysis_morphologicus_en: 'Verb + Object', analysis_morphologicus_zh: '動賓結構', significationes: { es: 'medir la cercanía/distancia de gobernante y ministro', en: 'gauge the closeness/distance of ruler and minister', zh: '考察君臣關係的親疏' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o5',
+                    textus_originalis: "能知此者，是謂量權。」",
+                    translationes: {
+                        en: "<strong>Translation:</strong> One who can know all this is said to be able to 'weigh power.'<br><br><strong>Analysis:</strong> This sentence concludes the definition. Mastering this comprehensive analysis is the true meaning of '量權'.",
+                        es: "<strong>Traducción:</strong> Se dice que aquel que puede saber todo esto es capaz de 'sopesar el poder.'<br><br><strong>Análisis:</strong> Esta oración concluye la definición. Dominar este análisis exhaustivo es el verdadero significado de '量權'.",
+                        zh: "<strong>翻譯:</strong> 能夠了解上述這一切的，就叫做「量權」。<br><br><strong>分析:</strong> 這句話總結了「量權」的定義。掌握這種全面的分析能力，才是「量權」的真諦。<br><br><strong>白話解釋:</strong> 如果能把以上九個方面都調查得清清楚楚，這就叫做真正懂得「量權」。"
+                    },
+                    verba: [
+                        { id_verbi: 'v5_1', terminus: '能知此者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que puede saber esto', en: 'one who can know this', zh: '能夠了解這些的人' } },
+                        { id_verbi: 'v5_2', terminus: '是謂量權', analysis_morphologicus: 'Verbo + Verbo + Objeto', analysis_morphologicus_en: 'Verb + Verb + Object', analysis_morphologicus_zh: '動詞 + 動詞 + 賓語', significationes: { es: 'es llamado sopesar el poder', en: 'is called weighing power', zh: '就叫做量權' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o6',
+                    textus_originalis: "揣情者，必以其甚喜之時，往而極其欲也，其有欲也，不能隱其情；",
+                    translationes: {
+                        en: "<strong>Translation:</strong> To figure out sentiments, one must approach a person at a time of their greatest joy and encourage their desires; when they have desires, they cannot hide their true feelings.<br><br><strong>Analysis:</strong> The text now moves to the second core concept, '揣情'. The first technique is to probe someone when they are happy. In this state, a person's guard is down, and by appealing to what they want, their underlying emotions and intentions become visible.",
+                        es: "<strong>Traducción:</strong> Para sondear los sentimientos, uno debe acercarse a una persona en un momento de su mayor alegría y alentar sus deseos; cuando tienen deseos, no pueden ocultar sus verdaderos sentimientos.<br><br><strong>Análisis:</strong> El texto pasa ahora al segundo concepto central, '揣情'. La primera técnica es sondear a alguien cuando está feliz. En este estado, la guardia de una persona está baja, y al apelar a lo que quieren, sus emociones e intenciones subyacentes se vuelven visibles.",
+                        zh: "<strong>翻譯:</strong> 揣摩他人情感，必須在他最高興的時候，去進一步助長他的慾望，當他心懷慾望時，就無法隱藏他的真情。<br><br><strong>分析:</strong> 文本轉向第二個核心概念「揣情」。第一個技巧是在對方高興時進行試探。在這種狀態下，人的防備心會降低，透過迎合其慾望，他們潛在的情感和意圖就會顯露出來。<br><br><strong>白話解釋:</strong> 接下來說「揣情」。要想揣摩一個人的內心，方法之一是，在他最高興、最得意的時候去找他，順著他的心意，鼓勵他去追求他想要的東西。這個時候，因為他正處於興奮和慾望之中，很難完全隱藏自己的真實想法。"
+                    },
+                    verba: [
+                        { id_verbi: 'v6_1', terminus: '揣情者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que sondea los sentimientos', en: 'one who figures out sentiments', zh: '揣摩他人情感的人' } },
+                        { id_verbi: 'v6_2', terminus: '以其甚喜之時', analysis_morphologicus: 'Frase preposicional (Tiempo)', analysis_morphologicus_en: 'Prepositional phrase (Time)', analysis_morphologicus_zh: '介詞短語 (時間)', significationes: { es: 'en el momento de su mayor alegría', en: 'at the time of their greatest joy', zh: '在他最高興的時候' } },
+                        { id_verbi: 'v6_3', terminus: '往而極其欲也', analysis_morphologicus: 'Cláusula de acción', analysis_morphologicus_en: 'Action clause', analysis_morphologicus_zh: '行動分句', significationes: { es: 'ir y extremar sus deseos', en: 'go and push their desires to the extreme', zh: '去助長他的慾望' } },
+                        { id_verbi: 'v6_4', terminus: '不能隱其情', analysis_morphologicus: 'Cláusula de resultado', analysis_morphologicus_en: 'Result clause', analysis_morphologicus_zh: '結果分句', significationes: { es: 'no puede ocultar sus sentimientos', en: 'cannot hide their feelings', zh: '無法隱藏他的真情' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o7',
+                    textus_originalis: "必以其甚懼之時，往而極其惡也，其有惡也，不能隱其情，情欲必出其變。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> One must also approach them at a time of their greatest fear and encourage what they loathe; when they loathe something, they cannot hide their true feelings, and their emotions and desires will surely reveal their changes.<br><br><strong>Analysis:</strong> This is the second technique for '揣情', the inverse of the first. By probing a person's fears and aversions when they are afraid, their guard is also down, and their reactions will expose their hidden feelings and intentions.",
+                        es: "<strong>Traducción:</strong> También se debe acercar a ellos en un momento de su mayor temor y alentar lo que detestan; cuando detestan algo, no pueden ocultar sus verdaderos sentimientos, y sus emociones y deseos seguramente revelarán sus cambios.<br><br><strong>Análisis:</strong> Esta es la segunda técnica para '揣情', la inversa de la primera. Al sondear los miedos y aversiones de una persona cuando está asustada, su guardia también está baja, y sus reacciones expondrán sus sentimientos e intenciones ocultos.",
+                        zh: "<strong>翻譯:</strong> 同樣，必須在他最恐懼的時候，去進一步加劇他所厭惡的事，當他心懷厭惡時，也無法隱藏他的真情，這樣他的情感慾望就必定會顯露出變化。<br><br><strong>分析:</strong> 這是「揣情」的第二個技巧，與第一個技巧相反。透過在一個人恐懼時，刺激他所害怕和厭惡的事物，他的防備同樣會降低，其反應將會暴露他隱藏的情感和意圖。<br><br><strong>白話解釋:</strong> 方法之二，是在他最害怕、最恐懼的時候去找他，故意提起或加劇那些他最討厭、最害怕的事情。這個時候，因為他正處於恐懼和厭惡之中，同樣很難隱藏自己的真實反應。無論是慾望還是恐懼，都能讓對方的情緒產生波動，從而露出破綻。"
+                    },
+                    verba: [
+                        { id_verbi: 'v7_1', terminus: '以其甚懼之時', analysis_morphologicus: 'Frase preposicional (Tiempo)', analysis_morphologicus_en: 'Prepositional phrase (Time)', analysis_morphologicus_zh: '介詞短語 (時間)', significationes: { es: 'en el momento de su mayor temor', en: 'at the time of their greatest fear', zh: '在他最恐懼的時候' } },
+                        { id_verbi: 'v7_2', terminus: '往而極其惡也', analysis_morphologicus: 'Cláusula de acción', analysis_morphologicus_en: 'Action clause', analysis_morphologicus_zh: '行動分句', significationes: { es: 'ir y extremar su aversión', en: 'go and push their aversion to the extreme', zh: '去加劇他所厭惡的事' } },
+                        { id_verbi: 'v7_3', terminus: '情欲必出其變', analysis_morphologicus: 'Cláusula de resultado', analysis_morphologicus_en: 'Result clause', analysis_morphologicus_zh: '結果分句', significationes: { es: 'los sentimientos y deseos deben mostrar su cambio', en: 'sentiments and desires must show their change', zh: '情感慾望必顯露變化' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o8',
+                    textus_originalis: "感動而不知其變者，乃且錯其人，勿與語而更問其所親，知其所安。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> If you interact with them but cannot perceive their changes, then you have misjudged the person. Do not speak with them further, but instead question those close to them to know what puts them at ease.<br><br><strong>Analysis:</strong> This is a corrective measure. If direct probing (through joy or fear) fails, it means you have fundamentally misread the person. The advice is to stop direct engagement and switch to indirect intelligence gathering by talking to their confidants to understand their baseline emotional state ('所安').",
+                        es: "<strong>Traducción:</strong> Si interactúas con ellos pero no puedes percibir sus cambios, entonces has juzgado mal a la persona. No hables más con ellos, sino que interroga a sus allegados para saber qué les tranquiliza.<br><br><strong>Análisis:</strong> Esta es una medida correctiva. Si el sondeo directo (a través de la alegría o el miedo) falla, significa que has malinterpretado fundamentalmente a la persona. El consejo es detener el contacto directo y pasar a la recopilación de inteligencia indirecta, hablando con sus confidentes para comprender su estado emocional base ('所安').",
+                        zh: "<strong>翻譯:</strong> 如果觸動了對方的情感卻沒能察覺其變化，那就是看錯了人。不要再直接與他交談，而是去詢問他親近的人，從而了解他內心真正的想法。<br><br><strong>分析:</strong> 這是一種補救措施。如果透過喜悅或恐懼的直接試探失敗了，說明你從根本上看錯了這個人。建議是停止直接接觸，轉而透過與其親信交談來進行間接情報收集，以了解其基本的情感狀態（「所安」）。<br><br><strong>白話解釋:</strong> 如果你用了這些方法去刺激對方，卻還是看不出他有什麼情緒變化，那就說明你可能完全看錯了這個人。這時候，就不要再跟他直接談了，應該改變策略，去問問他身邊最親近、最信任的人，從側面去了解他內心真正在乎和追求的是什麼。"
+                    },
+                    verba: [
+                        { id_verbi: 'v8_1', terminus: '感動而不知其變者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que lo conmueve pero no conoce su cambio', en: 'one who moves him but does not know his changes', zh: '觸動了對方卻沒察覺其變化的人' } },
+                        { id_verbi: 'v8_2', terminus: '乃且錯其人', analysis_morphologicus: 'Cláusula', analysis_morphologicus_en: 'Clause', analysis_morphologicus_zh: '分句', significationes: { es: 'entonces ha juzgado mal a la persona', en: 'then has misjudged the person', zh: '那就是看錯了人' } },
+                        { id_verbi: 'v8_3', terminus: '勿與語而更問其所親', analysis_morphologicus: 'Cláusula imperativa', analysis_morphologicus_en: 'Imperative clause', analysis_morphologicus_zh: '祈使句', significationes: { es: 'no hables con él y en su lugar pregunta a sus allegados', en: 'do not speak with him and instead ask his close ones', zh: '不要再與他交談，而是去問他親近的人' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o9',
+                    textus_originalis: "夫情變於內者，形見於外。故常必以其見者，而知其隱者。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> When feelings change within, their form appears without. Therefore, one must always use what is visible to know what is hidden.<br><br><strong>Analysis:</strong> This is a foundational principle of non-verbal communication and micro-expressions. Guiguzi states that internal emotional shifts, no matter how well hidden, will always manifest in external, observable signs ('形'). The strategist's job is to read these visible cues to understand the hidden reality.",
+                        es: "<strong>Traducción:</strong> Cuando los sentimientos cambian por dentro, su forma aparece por fuera. Por lo tanto, siempre se debe usar lo que es visible para conocer lo que está oculto.<br><br><strong>Análisis:</strong> Este es un principio fundamental de la comunicación no verbal y las microexpresiones. Guiguzi afirma que los cambios emocionales internos, por muy bien ocultos que estén, siempre se manifestarán en signos externos y observables ('形'). El trabajo del estratega es leer estas señales visibles para comprender la realidad oculta.",
+                        zh: "<strong>翻譯:</strong> 內心的情感發生變化，必然會表現在外在形態上。所以，必須時常根據那些看得見的表象，來洞察那些隱藏起來的內情。<br><br><strong>分析:</strong> 這是關於非語言溝通和微表情的基礎原則。《鬼谷子》指出，內在的情感變化，無論如何隱藏，總會透過外在的可觀察跡象（「形」）表現出來。戰略家的任務就是解讀這些可見的線索，以理解隱藏的真相。<br><br><strong>白話解釋:</strong> 一個基本的道理是：人內心的情緒一旦發生變化，總會在他的表情、動作、語氣等外在的行為上流露出來。所以，高明的策略家總是能根據對方外在的、可觀察到的行為，去推斷出他內心深處隱藏的想法。"
+                    },
+                    verba: [
+                        { id_verbi: 'v9_1', terminus: '情變於內者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'lo que cambia de sentimiento por dentro', en: 'that which changes of feeling within', zh: '內心發生的情感變化' } },
+                        { id_verbi: 'v9_2', terminus: '形見於外', analysis_morphologicus: 'Predicado', analysis_morphologicus_en: 'Predicate', analysis_morphologicus_zh: '謂語', significationes: { es: 'la forma se manifiesta afuera', en: 'the form appears without', zh: '形態會表現在外' } },
+                        { id_verbi: 'v9_3', terminus: '以其見者，而知其隱者', analysis_morphologicus: 'Cláusula de método', analysis_morphologicus_en: 'Method clause', analysis_morphologicus_zh: '方法分句', significationes: { es: 'usar lo que se ve para conocer lo que se oculta', en: 'use what is seen to know what is hidden', zh: '根據可見的，來了解隱藏的' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o10',
+                    textus_originalis: "此所以謂揣情。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> This is what is meant by 'figuring out sentiments.'<br><br><strong>Analysis:</strong> This sentence concludes the definition of the second key term, '揣情'. It encompasses direct probing through extreme emotions and indirect observation of behavioral cues.",
+                        es: "<strong>Traducción:</strong> Esto es lo que se entiende por 'sondear los sentimientos.'<br><br><strong>Análisis:</strong> Esta oración concluye la definición del segundo término clave, '揣情'. Abarca el sondeo directo a través de emociones extremas y la observación indirecta de señales de comportamiento.",
+                        zh: "<strong>翻譯:</strong> 這就是所謂的「揣情」。<br><br><strong>分析:</strong> 這句話總結了第二個關鍵術語「揣情」的定義。它包含了透過極端情緒進行直接試探，以及對行為線索的間接觀察。<br><br><strong>白話解釋:</strong> 以上這些方法，就是所謂「揣情」的技巧。"
+                    },
+                    verba: [
+                        { id_verbi: 'v10_1', terminus: '此所以謂揣情', analysis_morphologicus: 'Cláusula de juicio', analysis_morphologicus_en: 'Judgment clause', analysis_morphologicus_zh: '判斷句', significationes: { es: 'esto es lo que se llama sondear los sentimientos', en: 'this is what is called figuring out sentiments', zh: '這就是所謂的揣情' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o11',
+                    textus_originalis: "故計國事者，則當審權量；說人主，則當審揣情；謀慮情欲必出於此。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Therefore, one who plans matters of state must be precise in weighing power; one who persuades a ruler must be precise in figuring out sentiments. All plans, considerations, feelings and desires derive from these.<br><br><strong>Analysis:</strong> This sentence connects the two core skills to their primary applications. '量權' (objective analysis) is for macro-level state strategy. '揣情' (subjective analysis) is for micro-level persuasion of individuals. It asserts that all successful strategies are born from a mastery of these two.",
+                        es: "<strong>Traducción:</strong> Por lo tanto, quien planifica los asuntos de estado debe ser preciso al sopesar el poder; quien persuade a un gobernante debe ser preciso al sondear los sentimientos. Todos los planes, consideraciones, sentimientos y deseos derivan de estos.<br><br><strong>Análisis:</strong> Esta oración conecta las dos habilidades principales con sus aplicaciones primarias. '量權' (análisis objetivo) es para la estrategia de estado a nivel macro. '揣情' (análisis subjetivo) es para la persuasión de individuos a nivel micro. Afirma que todas las estrategias exitosas nacen del dominio de estas dos.",
+                        zh: "<strong>翻譯:</strong> 所以，謀劃國家大事的人，應當審慎地衡量權力；遊說君主的人，應當審慎地揣摩情感。所有的謀略、思慮、情感和慾望都必然出自於此。<br><br><strong>分析:</strong> 這句話將兩項核心技能與其主要應用聯繫起來。「量權」（客觀分析）用於宏觀的國家戰略。「揣情」（主觀分析）則用於微觀的個人遊說。它斷言，所有成功的策略都源於對這兩者的精通。<br><br><strong>白話解釋:</strong> 所以，一個基本的原則是：如果你要規劃國家大政方針，就必須做好「量權」，準確評估客觀實力；如果你要去遊說君主或他人，就必須做好「揣情」，深入了解對方的心理。任何計謀的產生，都離不開這兩大基礎。"
+                    },
+                    verba: [
+                        { id_verbi: 'v11_1', terminus: '計國事者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que planifica los asuntos de estado', en: 'one who plans matters of state', zh: '謀劃國家大事的人' } },
+                        { id_verbi: 'v11_2', terminus: '說人主', analysis_morphologicus: 'Verbo + Objeto', analysis_morphologicus_en: 'Verb + Object', analysis_morphologicus_zh: '動賓結構', significationes: { es: 'persuadir a un gobernante', en: 'persuade a ruler', zh: '遊說君主' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o12',
+                    textus_originalis: "乃可貴，乃可賤；乃可重，乃可輕；乃可利，乃可害；乃可成，乃可敗。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> From this, one can be valued or be debased; be respected or be slighted; be benefited or be harmed; find success or find failure.<br><br><strong>Analysis:</strong> This series of parallel clauses emphasizes the high stakes of mastering these skills. The outcomes are binary and extreme. Success in '量權' and '揣情' allows a strategist to control outcomes, elevating allies ('貴', '重', '利', '成') and defeating enemies ('賤', '輕', '害', '敗').",
+                        es: "<strong>Traducción:</strong> A partir de esto, uno puede ser valorado o envilecido; ser respetado o menospreciado; ser beneficiado o perjudicado; encontrar el éxito o el fracaso.<br><br><strong>Análisis:</strong> Esta serie de cláusulas paralelas enfatiza lo mucho que está en juego al dominar estas habilidades. Los resultados son binarios y extremos. El éxito en '量權' y '揣情' permite a un estratega controlar los resultados, elevando a los aliados ('貴', '重', '利', '成') y derrotando a los enemigos ('賤', '輕', '害', '敗').",
+                        zh: "<strong>翻譯:</strong> 於是，可以讓某些人變得尊貴，也可以讓某些人變得卑賤；可以讓某些人受到重用，也可以讓他們受到輕視；可以讓他們獲利，也可以讓他們受害；可以促成他們，也可以毀滅他們。<br><br><strong>分析:</strong> 這一系列並列子句強調了掌握這些技能的重大影響。結果是二元且極端的。成功運用「量權」和「揣情」的謀略家能夠控制局勢，提拔盟友（貴、重、利、成），並擊敗敵人（賤、輕、害、敗）。<br><br><strong>白話解釋:</strong> 掌握了這兩門技術，你就可以在政治博弈中佔據主動。你可以決定讓誰變得尊貴或卑賤，讓誰被重用或輕視，讓誰得利或受害，讓誰成功或失敗。"
+                    },
+                    verba: [
+                        { id_verbi: 'v12_1', terminus: '乃可', analysis_morphologicus: 'Conjunción + Verbo Modal', analysis_morphologicus_en: 'Conjunction + Modal Verb', analysis_morphologicus_zh: '連詞 + 情態動詞', significationes: { es: 'entonces se puede', en: 'then one can', zh: '於是就可以' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o13',
+                    textus_originalis: "其數一也。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Their method is one and the same.<br><br><strong>Analysis:</strong> A concise summary stating that although the outcomes are varied (valuing/debasing, helping/harming), the underlying principle or 'method' ('數') for achieving them all is the same: the combined mastery of weighing power and figuring out sentiments.",
+                        es: "<strong>Traducción:</strong> Su método es uno y el mismo.<br><br><strong>Análisis:</strong> Un resumen conciso que afirma que, aunque los resultados son variados (valorar/envilecer, ayudar/perjudicar), el principio o 'método' ('數') subyacente para lograrlos todos es el mismo: el dominio combinado de sopesar el poder y sondear los sentimientos.",
+                        zh: "<strong>翻譯:</strong> 其中的道理都是一樣的。<br><br><strong>分析:</strong> 這句簡潔的總結指出，儘管結果多樣（或尊貴或卑賤，或有利或有害），但實現這一切的根本原則或「術」（「數」）是相同的：即對「量權」和「揣情」的綜合掌握。<br><br><strong>白話解釋:</strong> 這背後的根本方法論（「數」），其實是統一的。"
+                    },
+                    verba: [
+                        { id_verbi: 'v13_1', terminus: '其數一也', analysis_morphologicus: 'Sujeto + Predicado', analysis_morphologicus_en: 'Subject + Predicate', analysis_morphologicus_zh: '主謂結構', significationes: { es: 'su método es uno', en: 'their method is one', zh: '其中的道理是統一的' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o14',
+                    textus_originalis: "故雖有先王之道，聖智之謀，非揣情，隱匿無可索之。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Therefore, even if you have the Way of the former kings and the strategies of the sages, if you do not figure out sentiments, the hidden things cannot be sought out.<br><br><strong>Analysis:</strong> This sentence argues for the supremacy of '揣情'. Theoretical knowledge, even the most profound wisdom of the past, is useless without the practical skill of understanding the hidden intentions of the people you are dealing with. Without psychological insight, even the best plans remain inert.",
+                        es: "<strong>Traducción:</strong> Por lo tanto, aunque tengas el Camino de los reyes antiguos y las estrategias de los sabios, si no sondea los sentimientos, las cosas ocultas no pueden ser descubiertas.<br><br><strong>Análisis:</strong> Esta oración aboga por la supremacía de '揣情'. El conocimiento teórico, incluso la sabiduría más profunda del pasado, es inútil sin la habilidad práctica de comprender las intenciones ocultas de las personas con las que se trata. Sin perspicacia psicológica, incluso los mejores planes permanecen inertes.",
+                        zh: "<strong>翻譯:</strong> 所以，即使有先代聖王的治國原則和聖賢智者的謀略，如果不去揣摩人情，那麼那些隱藏的狀況就無從探求。<br><br><strong>分析:</strong> 這句話強調了「揣情」的至高重要性。理論知識，即便是古代最深邃的智慧，如果沒有洞察你所應對之人隱藏意圖的實踐技能，也是無用的。缺乏心理洞察力，再好的計劃也只是紙上談兵。<br><br><strong>白話解釋:</strong> 所以說，就算你學了滿腹經綸，懂得了古代聖賢的道理和策略，但如果你不懂得「揣情」，不懂得洞察人心，那麼對於那些隱藏在檯面下的真實情況，你還是無從下手。"
+                    },
+                    verba: [
+                        { id_verbi: 'v14_1', terminus: '非揣情', analysis_morphologicus: 'Condicional negativo', analysis_morphologicus_en: 'Negative conditional', analysis_morphologicus_zh: '否定條件句', significationes: { es: 'si no es sondeando los sentimientos', en: 'if not by figuring out sentiments', zh: '如果不去揣摩人情' } },
+                        { id_verbi: 'v14_2', terminus: '隱匿無可索之', analysis_morphologicus: 'Cláusula de resultado', analysis_morphologicus_en: 'Result clause', analysis_morphologicus_zh: '結果分句', significationes: { es: 'lo oculto no puede ser buscado', en: 'the hidden cannot be sought', zh: '隱藏的狀況無從探求' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o15',
+                    textus_originalis: "此謀之大本也，而說之法也。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> This is the great foundation of strategy and the method of persuasion.<br><br><strong>Analysis:</strong> A final, powerful summary. The combination of '量權' and '揣情' is not just a useful tool; it is the absolute foundation ('大本') of all strategy and the core technique ('法') of all persuasion.",
+                        es: "<strong>Traducción:</strong> Este es el gran fundamento de la estrategia y el método de la persuasión.<br><br><strong>Análisis:</strong> Un resumen final y poderoso. La combinación de '量權' y '揣情' no es solo una herramienta útil; es el fundamento absoluto ('大本') de toda estrategia y la técnica central ('法') de toda persuasión.",
+                        zh: "<strong>翻譯:</strong> 這就是謀略的根本，也是遊說的法則。<br><br><strong>分析:</strong> 一句強而有力的最終總結。「量權」與「揣情」的結合不僅僅是一個有用的工具，它是一切謀略的絕對基礎（「大本」），也是所有遊說的核心方法（「法」）。<br><br><strong>白話解釋:</strong> （量權和揣情）這兩件事，是所有計謀的根本，也是所有遊說技巧的法則。"
+                    },
+                    verba: [
+                        { id_verbi: 'v15_1', terminus: '此謀之大本也', analysis_morphologicus: 'Frase de juicio', analysis_morphologicus_en: 'Judgment phrase', analysis_morphologicus_zh: '判斷句', significationes: { es: 'este es el gran fundamento de la estrategia', en: 'this is the great foundation of strategy', zh: '這是謀略的根本' } },
+                        { id_verbi: 'v15_2', terminus: '而說之法也', analysis_morphologicus: 'Frase de juicio', analysis_morphologicus_en: 'Judgment phrase', analysis_morphologicus_zh: '判斷句', significationes: { es: 'y el método de la persuasión', en: 'and the method of persuasion', zh: '也是遊說的法則' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o16',
+                    textus_originalis: "常有事于人，人莫能先，先事而生，此最難為。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> To always be ahead of others in managing affairs, so that no one can anticipate you, and to generate opportunities before events unfold—this is the most difficult thing to do.<br><br><strong>Analysis:</strong> The text shifts to a higher level of mastery. It's not just about reacting to situations but about proactively creating them ('先事而生'). This requires anticipating events and actions before anyone else, a skill described as supremely difficult.",
+                        es: "<strong>Traducción:</strong> Estar siempre por delante de los demás en la gestión de los asuntos, de modo que nadie pueda anticiparse a ti, y generar oportunidades antes de que los acontecimientos se desarrollen: esto es lo más difícil de hacer.<br><br><strong>Análisis:</strong> El texto pasa a un nivel superior de maestría. No se trata solo de reaccionar a las situaciones, sino de crearlas proactivamente ('先事而生'). Esto requiere anticipar eventos y acciones antes que nadie, una habilidad descrita como sumamente difícil.",
+                        zh: "<strong>翻譯:</strong> 常常能夠預先替人謀劃，使別人都無法搶在前面，在事情還未發生前就預先策動，這是最難做到的。<br><br><strong>分析:</strong> 文本轉向了更高層次的境界。這不僅僅是應對局勢，而是主動創造局勢（「先事而生」）。這要求在任何其他人之前預見事件和行動，這種技能被描述為極其困難。<br><br><strong>白話解釋:</strong> 在與人共事或博弈時，最高明的境界是：總能比別人先一步行動，在事情還沒發生前就佈局，創造對自己有利的局面。這一點是最難做到的。"
+                    },
+                    verba: [
+                        { id_verbi: 'v16_1', terminus: '人莫能先', analysis_morphologicus: 'Cláusula (Doble negación)', analysis_morphologicus_en: 'Clause (Double negative)', analysis_morphologicus_zh: '雙重否定句', significationes: { es: 'nadie puede adelantarse', en: 'no one can be first', zh: '沒有人能搶先' } },
+                        { id_verbi: 'v16_2', terminus: '先事而生', analysis_morphologicus: 'Verbo + Conjunción + Verbo', analysis_morphologicus_en: 'Verb + Conjunction + Verb', analysis_morphologicus_zh: '動詞 + 連詞 + 動詞', significationes: { es: 'adelantarse a los asuntos y generar (oportunidades)', en: 'get ahead of affairs and generate (opportunities)', zh: '在事前就策動' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o17',
+                    textus_originalis: "故曰揣情最難守司。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Therefore, it is said that figuring out sentiments is the most difficult aspect to manage.<br><br><strong>Analysis:</strong> This statement highlights that of all the skills, the psychological aspect ('揣情') is the hardest to consistently master and control ('守司'). Objective power can be measured, but human emotion is volatile and complex.",
+                        es: "<strong>Traducción:</strong> Por lo tanto, se dice que sondear los sentimientos es el aspecto más difícil de manejar.<br><br><strong>Análisis:</strong> Esta afirmación destaca que, de todas las habilidades, el aspecto psicológico ('揣情') es el más difícil de dominar y controlar de manera consistente ('守司'). El poder objetivo se puede medir, pero la emoción humana es volátil y compleja.",
+                        zh: "<strong>翻譯:</strong> 所以說，揣摩人情是最難掌握和運用的。<br><br><strong>分析:</strong> 這句話強調，在所有技能中，心理層面（「揣情」）是最難持續掌握和控制的（「守司」）。客觀的權力可以衡量，但人類的情感是易變和複雜的。<br><br><strong>白話解釋:</strong> 所以說，在所有謀略技巧中，「揣情」這一環是最難真正掌握和保持的。"
+                    },
+                    verba: [
+                        { id_verbi: 'v17_1', terminus: '揣情最難守司', analysis_morphologicus: 'Sujeto + Adverbio + Predicado', analysis_morphologicus_en: 'Subject + Adverb + Predicate', analysis_morphologicus_zh: '主謂結構', significationes: { es: 'sondear los sentimientos es lo más difícil de manejar', en: 'figuring out sentiments is the most difficult to manage', zh: '揣摩人情最難掌握' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o18',
+                    textus_originalis: "言必時其謀慮。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> One's words must be timed with one's plans and considerations.<br><br><strong>Analysis:</strong> This emphasizes the importance of timing. A good plan and understanding of psychology are useless if the words used to execute the plan are spoken at the wrong moment.",
+                        es: "<strong>Traducción:</strong> Las palabras de uno deben estar sincronizadas con sus planes y consideraciones.<br><br><strong>Análisis:</strong> Esto enfatiza la importancia del momento oportuno. Un buen plan y una buena comprensión de la psicología son inútiles si las palabras utilizadas para ejecutar el plan se dicen en el momento equivocado.",
+                        zh: "<strong>翻譯:</strong> 言辭必須與謀略和時機相配合。<br><br><strong>分析:</strong> 這句話強調了時機的重要性。一個好的計劃和對心理的理解，如果用以執行的言辭在錯誤的時機說出，也是枉然。<br><br><strong>白話解釋:</strong> 你說話的時機，必須和你內心的謀劃配合得天衣無縫。"
+                    },
+                    verba: [
+                        { id_verbi: 'v18_1', terminus: '言必時其謀慮', analysis_morphologicus: 'Sujeto + Verbo + Objeto', analysis_morphologicus_en: 'Subject + Verb + Object', analysis_morphologicus_zh: '主謂賓結構', significationes: { es: 'las palabras deben sincronizar sus planes', en: 'words must time their plans', zh: '言辭必須配合時機與謀略' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o19',
+                    textus_originalis: "故觀蜎飛蠕動，無不有利害，可以生事。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> Therefore, in observing the flight of insects and the crawling of worms, in nothing is there not both benefit and harm, from which events can be generated.<br><br><strong>Analysis:</strong> A metaphorical statement about finding opportunities in even the smallest details. Just as tiny creatures have their own dynamics of advantage and disadvantage, a master strategist can observe the most minute social or political movements and use them to 'generate events' ('生事'), i.e., create opportunities.",
+                        es: "<strong>Traducción:</strong> Por lo tanto, al observar el vuelo de los insectos y el arrastrarse de los gusanos, en nada hay que no haya tanto beneficio como perjuicio, de lo cual pueden generarse acontecimientos.<br><br><strong>Análisis:</strong> Una declaración metafórica sobre cómo encontrar oportunidades incluso en los detalles más pequeños. Así como las criaturas diminutas tienen su propia dinámica de ventaja y desventaja, un maestro estratega puede observar los movimientos sociales o políticos más diminutos y usarlos para 'generar acontecimientos' ('生事'), es decir, crear oportunidades.",
+                        zh: "<strong>翻譯:</strong> 所以，觀察微小的昆蟲飛行蠕動，都能發現其中無不包含著利與害的關係，從中可以引發事端。<br><br><strong>分析:</strong> 這是一個比喻性的陳述，說明即使在最微小的細節中也能找到機會。正如微小生物有其自身的利害動態，謀略大師也能觀察到最細微的社會或政治動向，並利用它們來「生事」，即創造機會。<br><br><strong>白話解釋:</strong> 所以，真正的高手，能從最細微的地方，比如觀察小蟲的飛行和蠕動，都能看出其中的利害關係，並從中找到可以利用的機會，進而策動整個事件的發生。"
+                    },
+                    verba: [
+                        { id_verbi: 'v19_1', terminus: '觀蜎飛蠕動', analysis_morphologicus: 'Verbo + Objeto', analysis_morphologicus_en: 'Verb + Object', analysis_morphologicus_zh: '動賓結構', significationes: { es: 'observar el volar y el arrastrarse', en: 'observe the flying and crawling', zh: '觀察昆蟲飛行蠕動' } },
+                        { id_verbi: 'v19_2', terminus: '無不有利害', analysis_morphologicus: 'Doble negación', analysis_morphologicus_en: 'Double negative', analysis_morphologicus_zh: '雙重否定', significationes: { es: 'no hay sin que haya beneficio y perjuicio (siempre hay)', en: 'there is not without benefit and harm (there always is)', zh: '無不包含利害' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o20',
+                    textus_originalis: "美生事者，幾之勢也。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> One who is skilled at generating events understands the momentum of the infinitesimal.<br><br><strong>Analysis:</strong> This is a very subtle and profound statement. '幾' refers to the tiny, almost imperceptible starting point of a change. '勢' is the momentum or potential energy of a situation. A true master can recognize the potential momentum ('勢') within the smallest signs of change ('幾') and skillfully amplify it to 'generate an event'.",
+                        es: "<strong>Traducción:</strong> Aquel que es hábil en generar acontecimientos comprende el impulso de lo infinitesimal.<br><br><strong>Análisis:</strong> Esta es una declaración muy sutil y profunda. '幾' se refiere al punto de partida diminuto, casi imperceptible, de un cambio. '勢' es el impulso o la energía potencial de una situación. Un verdadero maestro puede reconocer el impulso potencial ('勢') dentro de los más pequeños signos de cambio ('幾') y amplificarlo hábilmente para 'generar un acontecimiento'.",
+                        zh: "<strong>翻譯:</strong> 善於策動事端的人，是掌握了事物微小變化的趨勢。<br><br><strong>分析:</strong> 這是一個非常微妙而深刻的論述。「幾」指的是變化發生時那微小到幾乎無法察覺的起點。「勢」則是局勢的動能或潛在能量。一個真正的大師能夠在最微小的變化跡象（「幾」）中識別出其潛在的趨勢（「勢」），並巧妙地將其放大以「生事」。<br><br><strong>白話解釋:</strong> 善於主動創造機會的人，他們真正掌握的，是從最微小的徵兆（「幾」）中，洞察未來發展趨勢（「勢」）的能力。"
+                    },
+                    verba: [
+                        { id_verbi: 'v20_1', terminus: '美生事者', analysis_morphologicus: 'Sujeto', analysis_morphologicus_en: 'Subject', analysis_morphologicus_zh: '主語', significationes: { es: 'aquel que es bueno generando eventos', en: 'one who is skilled at generating events', zh: '善於策動事端的人' } },
+                        { id_verbi: 'v20_2', terminus: '幾之勢也', analysis_morphologicus: 'Predicado nominal', analysis_morphologicus_en: 'Nominal predicate', analysis_morphologicus_zh: '名詞謂語', significationes: { es: 'es el impulso de lo infinitesimal', en: 'is the momentum of the infinitesimal', zh: '是掌握了微小變化的趨勢' } }
+                    ]
+                },
+                {
+                    id_orationis: 'o21',
+                    textus_originalis: "此揣情飾言成文章而後論之也。",
+                    translationes: {
+                        en: "<strong>Translation:</strong> This is what is meant by figuring out sentiments, adorning one's words, forming a complete discourse, and only then debating the matter.<br><br><strong>Analysis:</strong> The final sentence ties everything together. The ultimate art is to use '揣情' (psychological insight) to '飾言' (craft your words perfectly) and form a compelling argument ('成文章'). Only after this thorough preparation should one engage in persuasion or debate ('論之').",
+                        es: "<strong>Traducción:</strong> Esto es lo que se entiende por sondear los sentimientos, adornar las palabras, formar un discurso completo y solo entonces debatir el asunto.<br><br><strong>Análisis:</strong> La frase final une todo. El arte supremo es usar '揣情' (perspicacia psicológica) para '飾言' (elaborar las palabras a la perfección) y formar un argumento convincente ('成文章'). Solo después de esta preparación exhaustiva se debe participar en la persuasión o el debate ('論之').",
+                        zh: "<strong>翻譯:</strong> 這就是揣摩人情、修飾言辭、組織成完整的篇章，然後才進行論辯的道理。<br><br><strong>分析:</strong> 最後一句話將所有內容串連起來。最高的藝術是運用「揣情」（心理洞察）來「飾言」（完美地打造言辭），從而構成一篇有說服力的論述（「成文章」）。只有在這樣周全的準備之後，才應該進行遊說或辯論（「論之」）。<br><br><strong>白話解釋:</strong> 這整套方法，就是先透過「揣情」洞察人心，然後「飾言」修飾自己的言辭，把所有觀點組織成一篇無懈可擊的「文章」，準備好這一切之後，才去跟人辯論和遊說。"
+                    },
+                    verba: [
+                        { id_verbi: 'v21_1', terminus: '揣情飾言成文章', analysis_morphologicus: 'Serie de cláusulas verbales', analysis_morphologicus_en: 'Series of verb clauses', analysis_morphologicus_zh: '連動結構', significationes: { es: 'sondear sentimientos, adornar palabras, formar un discurso', en: 'figure out sentiments, adorn words, form a discourse', zh: '揣摩人情、修飾言辭、組織成篇章' } },
+                        { id_verbi: 'v21_2', terminus: '而後論之也', analysis_morphologicus: 'Cláusula final', analysis_morphologicus_en: 'Final clause', analysis_morphologicus_zh: '結尾分句', significationes: { es: 'y después debatirlo', en: 'and afterward debate it', zh: '然後才進行論辯' } }
+                    ]
+                }
+            ];
+        }
+
+        // --- INICIALIZACIÓN ---
+        initialRender();
+        
+    });
+    </script>
+</body>
+</html>
